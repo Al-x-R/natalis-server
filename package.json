@@ -1,0 +1,35 @@
+{
+  "name": "natalis-server",
+  "version": "1.0.0",
+  "license": "AGPL-3.0-or-later",
+  "repository": "github:Al-x-R/natalis-server",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "ephe:download": "node scripts/download-ephe.mjs",
+    "tzdata:build": "node scripts/build-tzdata.mjs",
+    "postinstall": "node scripts/download-ephe.mjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fastify/cors": "^11.4.1",
+    "fastify": "^5.12.8",
+    "geo-tz": "^8.1.11",
+    "luxon": "^3.7.2",
+    "sweph": "^2.10.3-8"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.7.6",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

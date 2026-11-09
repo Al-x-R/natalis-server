@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+*.log
+
+# Swiss Ephemeris data, downloaded by `npm install` / `npm run ephe:download`
+ephe/*.se1
+
+# local, per-developer files
+.env*
+.idea/
+.DS_Store
+.claude/settings.local.json

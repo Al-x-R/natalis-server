@@ -1,0 +1,138 @@
+{
+  "_comment": "Reference charts. Positions were taken on 2026-11-09 from astro.com's online Swiss Ephemeris (https://www.astro.com/swisseph/swetest.htm; the exact command is in each chart's \"source\"): tropical, Placidus, true node. That tool takes UT, so it checks positions and houses, while the server converts UTC to UT1 (up to 0.9 s apart since 1972, a few arcseconds on the angles: Sydney 2000 differs by 4.5\" on the ASC), hence 0.5' rather than a tighter tolerance; \"utc\" is the expected result of the time-zone step and comes from the zone's documented history, not from astro.com's atlas. To add a chart from astro.com's chart page, use its notation (\"23°30' Pisces\", seconds optional) and omit the per-chart \"toleranceArcmin\": the default below allows for values truncated to the minute.",
+  "toleranceArcmin": 1.5,
+  "charts": [
+    {
+      "label": "Albert Einstein — Ulm, 1879-03-14 11:30 LMT",
+      "source": "/ulb/swetest -b14.3.1879 -n1 -s1 -fPZS -p0123456789tD -eswe -ut10:50:04 -house9.9833,48.4,P",
+      "toleranceArcmin": 0.5,
+      "input": {
+        "date": "1879-03-14",
+        "time": "11:30",
+        "lat": 48.4,
+        "lon": 9.9833
+      },
+      "expected": {
+        "utc": "1879-03-14T10:50:04.008Z",
+        "planets": {
+          "Sun": "23°30'28.0573\" Pisces",
+          "Moon": "14°31'35.6004\" Sagittarius",
+          "Mercury": "3°08'38.3114\" Aries",
+          "Venus": "16°59'6.2415\" Aries",
+          "Mars": "26°54'51.3225\" Capricorn",
+          "Jupiter": "27°29'2.7992\" Aquarius",
+          "Saturn": "4°11'23.4039\" Aries",
+          "Uranus": "1°17'18.9522\" Virgo",
+          "Neptune": "7°52'19.0768\" Taurus",
+          "Pluto": "24°43'32.0319\" Taurus",
+          "TrueNode": "2°43'52.5894\" Aquarius",
+          "Chiron": "5°32'40.9018\" Taurus"
+        },
+        "asc": "11°38'47.0938\" Cancer",
+        "mc": "12°50'23.5619\" Pisces",
+        "houses": [
+          "11°38'47.0938\" Cancer",
+          "28°37'2.1081\" Cancer",
+          "17°48'28.7794\" Leo",
+          "12°50'23.5619\" Virgo",
+          "18°19'58.6896\" Libra",
+          "3°06'34.1462\" Sagittarius",
+          "11°38'47.0938\" Capricorn",
+          "28°37'2.1081\" Capricorn",
+          "17°48'28.7794\" Aquarius",
+          "12°50'23.5619\" Pisces",
+          "18°19'58.6896\" Aries",
+          "3°06'34.1462\" Gemini"
+        ]
+      }
+    },
+    {
+      "label": "Kharkiv, 1990-05-15 14:30 (Moscow summer time, UTC+4)",
+      "source": "/ulb/swetest -b15.5.1990 -n1 -s1 -fPZS -p0123456789tD -eswe -ut10:30:00 -house36.25,49.98,P",
+      "toleranceArcmin": 0.5,
+      "input": {
+        "date": "1990-05-15",
+        "time": "14:30",
+        "lat": 49.98,
+        "lon": 36.25
+      },
+      "expected": {
+        "utc": "1990-05-15T10:30:00.000Z",
+        "planets": {
+          "Sun": "24°20'9.0366\" Taurus",
+          "Moon": "26°23'25.1665\" Capricorn",
+          "Mercury": "8°01'12.4683\" Taurus",
+          "Venus": "12°44'49.2965\" Aries",
+          "Mars": "18°17'14.7501\" Pisces",
+          "Jupiter": "9°31'47.7270\" Cancer",
+          "Saturn": "25°15'1.6681\" Capricorn",
+          "Uranus": "9°11'7.4867\" Capricorn",
+          "Neptune": "14°21'13.6879\" Capricorn",
+          "Pluto": "16°10'8.8711\" Scorpio",
+          "TrueNode": "10°15'33.9425\" Aquarius",
+          "Chiron": "13°12'26.7361\" Cancer"
+        },
+        "asc": "13°14'10.4732\" Virgo",
+        "mc": "8°23'16.1411\" Gemini",
+        "houses": [
+          "13°14'10.4732\" Virgo",
+          "5°23'10.8667\" Libra",
+          "3°40'27.6262\" Scorpio",
+          "8°23'16.1411\" Sagittarius",
+          "15°14'11.7604\" Capricorn",
+          "17°12'48.1818\" Aquarius",
+          "13°14'10.4732\" Pisces",
+          "5°23'10.8667\" Aries",
+          "3°40'27.6262\" Taurus",
+          "8°23'16.1411\" Gemini",
+          "15°14'11.7604\" Cancer",
+          "17°12'48.1818\" Leo"
+        ]
+      }
+    },
+    {
+      "label": "Sydney, 2000-01-01 12:00 (AEDT, UTC+11; southern hemisphere)",
+      "source": "/ulb/swetest -b1.1.2000 -n1 -s1 -fPZS -p0123456789tD -eswe -ut01:00:00 -house151.21,-33.87,P",
+      "toleranceArcmin": 0.5,
+      "input": {
+        "date": "2000-01-01",
+        "time": "12:00",
+        "lat": -33.87,
+        "lon": 151.21
+      },
+      "expected": {
+        "utc": "2000-01-01T01:00:00.000Z",
+        "planets": {
+          "Sun": "9°54'6.0795\" Capricorn",
+          "Moon": "7°47'50.7452\" Scorpio",
+          "Mercury": "1°10'35.5649\" Capricorn",
+          "Venus": "1°00'42.3521\" Sagittarius",
+          "Mars": "27°36'28.0394\" Aquarius",
+          "Jupiter": "25°14'5.1366\" Aries",
+          "Saturn": "10°24'17.9887\" Taurus",
+          "Uranus": "14°47'10.1777\" Aquarius",
+          "Neptune": "3°10'36.2393\" Aquarius",
+          "Pluto": "11°26'19.1091\" Sagittarius",
+          "TrueNode": "3°58'39.5933\" Leo",
+          "Chiron": "11°33'54.6082\" Sagittarius"
+        },
+        "asc": "26°48'17.9240\" Pisces",
+        "mc": "26°31'36.4101\" Sagittarius",
+        "houses": [
+          "26°48'17.9240\" Pisces",
+          "23°48'20.5528\" Aries",
+          "24°10'45.0096\" Taurus",
+          "26°31'36.4101\" Gemini",
+          "28°53'39.8664\" Cancer",
+          "29°24'57.0363\" Leo",
+          "26°48'17.9240\" Virgo",
+          "23°48'20.5528\" Libra",
+          "24°10'45.0096\" Scorpio",
+          "26°31'36.4101\" Sagittarius",
+          "28°53'39.8664\" Capricorn",
+          "29°24'57.0363\" Aquarius"
+        ]
+      }
+    }
+  ]
+}
